@@ -1,0 +1,78 @@
+<style>
+    * {
+        margin: 0 auto;
+    }
+    .table{
+        background-image: url(images.jpg);
+        height: 100vh;
+    }
+    #root{
+        border: 20px solid #563024;
+    }
+    h1 {
+        text-align: center;
+        font-size: 60px;
+        color: #563024;
+    }
+
+    .black {
+        /* background-color: black; */
+        background-image: url(wooden1.jpg);
+        width: 75px;
+        height: 75px;
+    }
+
+    .white {
+        /* background-color: white; */
+        background-image: url(wooden2.jpg);
+        width: 75px;
+        height: 75px;
+    }
+</style>
+
+<div class="table">
+    <h1>Chess Board</h1>
+    <table id="root" border="1"></table>
+</div>
+
+<script type="text/javascript">
+
+
+    let root = document.getElementById('root');
+
+    for (let i = 1; i <= 8; i++) {
+        let tr = document.createElement('tr');
+
+        if (i % 2 == 1) {
+            for (let j = 1; j <= 8; j++) {
+
+                if (j % 2 == 1) {
+                    let td = document.createElement('td');
+                    td.setAttribute('class', 'white');
+                    tr.appendChild(td);
+                } else {
+                    let td = document.createElement('td');
+                    td.setAttribute('class', 'black');
+                    tr.appendChild(td);
+                }
+
+            }
+        } else {
+            for (let j = 1; j <= 8; j++) {
+                if (j % 2 == 1) {
+                    let td = document.createElement('td');
+                    td.setAttribute('class', 'black');
+                    tr.appendChild(td);
+                } else {
+                    let td = document.createElement('td');
+                    td.setAttribute('class', 'white');
+                    tr.appendChild(td);
+                }
+            }
+        }
+        root.appendChild(tr);
+    }
+
+
+
+</script>
